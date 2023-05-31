@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Forex Current Rate Table</h4>
+                <p class="category">Here all rate are in comparision to USD</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <th>Country Code</th>
+                        <th>Country Name</th>
+                        <th>Rate </th>
+                    </thead>
+                    <tbody>   
+                        {% for b in table_data %}
+                            <tr>
+                                <td>
+                                    {{b[0]}}
+                                </td>
+                                <td>
+                                    {{b[1]}}
+                                </td>
+                                <td>
+                                    {{b[2]}}
+                                </td>
+                            </tr>
+                        {% endfor%}                       
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

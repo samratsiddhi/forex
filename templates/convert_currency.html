@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Convert Currency</h4>
+            </div>
+            <div class="content">
+                <form action="#" method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Convert From</label>
+                                <select name="from" id="from" class="form-control">
+                                    {% for data in form_data %}
+                                        <option value="{{data[0]}}">{{data[1]}}</option>
+                                    {% endfor%}
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Convert To</label>
+                                <select name="to" id="to" class="form-control">
+                                    {% for data in form_data %}
+                                        <option value="{{data[0]}}">{{data[1]}}</option>
+                                    {% endfor%}
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Convert To</label>
+                                <input type="number" class="form-control" placeholder="Enter Amount" name="amount" required>
+                            </div>
+                        </div>
+                    </div>
+                    {% if(conversion)%}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Result</label>
+                                <input type="number" class="form-control" value= {{conversion}} name="'amount" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <button type="submit" class="btn btn-info btn-fill pull-right">Convert</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
